@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Service Group | Legendary AI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0f172a', /* Slate 900 */
+                            accent: '#2563eb', /* Blue 600 */
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .accordion-content {
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 1200px; /* Increased for larger content */
+            opacity: 1;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .matrix-box {
+            background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Nav -->
+    <header class="w-full py-5 px-6 md:px-12 border-b border-gray-200 bg-white shadow-sm fixed top-0 z-50">
+        <div class="flex justify-between items-center max-w-7xl mx-auto w-full">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-layer-group text-brand-accent text-2xl"></i>
+                <span class="font-bold text-xl tracking-tight text-slate-900">Agentic Service Group</span>
+            </div>
+            <!-- Removed Internal Documentation Link -->
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Hero Section -->
+        <section class="mb-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 leading-tight">
+                Redesigning I.T. for the <br/>
+                <span class="text-brand-accent">Agentic Era</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                The Agentic Service Group ensures security, compliance, and operational excellence for the AI workforce.
+            </p>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
+                <div class="bg-white border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-brand-accent text-lg mb-3 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i> The Organizational Gap
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Modern enterprises typically lack a dedicated home for autonomous systems. Without a reorganization to create this function, companies face "shadow AI" sprawl, where unmanaged agents operate without security oversight, architectural consistency, or clear accountability boundaries.
+                    </p>
+                </div>
+                <div class="bg-white border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-slate-900 text-lg mb-3 font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-crosshairs"></i> The Recommendation
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Organizations should establish a specialized group to design, deploy, and govern the agent lifecycle. This group must serve as the center of excellence, ensuring every autonomous system is secure, compliant, scalable, and directly aligned with strategic business objectives.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="relative py-8 mb-16 flex items-center justify-center">
+            <div class="h-px bg-gray-300 w-full absolute"></div>
+            <div class="bg-brand-light px-4 relative z-10">
+                <span class="text-sm font-bold text-gray-400 uppercase tracking-widest">Operational Impact</span>
+            </div>
+        </div>
+
+        <!-- Accordion Section -->
+        <section id="departments" class="max-w-5xl mx-auto">
+            <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center text-slate-900">
+                Departmental Relationships
+            </h3>
+
+            <div class="space-y-3" id="accordion-container">
+                
+                <!-- 1. Agentic Service Group (Default Open) -->
+                <div class="accordion-item active bg-white border border-brand-accent rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none bg-slate-50 hover:bg-slate-100 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-blue-100 flex items-center justify-center text-brand-accent">
+                                <i class="fa-solid fa-robot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Agentic Service Group</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">AI Agent Operations</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-200">
+                        <div class="pt-6 text-slate-700 leading-relaxed space-y-4">
+                            <p>
+                                The Agentic Service Group (ASG) acts as the central nervous system for the autonomous enterprise. Beyond simple deployment, it is tasked with the cradle-to-grave lifecycle management of non-human workers. This encompasses the initial "hiring" (provisioning) of agents, their ongoing performance reviews (observability), and their eventual decommissioning.
+                            </p>
+                            <p>
+                                ASG establishes the "Constitution" for AI behavior—a rigorous set of policies defining what agents can and cannot do. It manages the complex web of agent-to-agent transactions, ensuring that machine negotiations do not spiral into race conditions or resource contention. Furthermore, ASG protects the organization's bottom line by enforcing fiscal guardrails on autonomous token consumption and API spending.
+                            </p>
+                            <p>
+                                Crucially, the ASG operates not just as a gatekeeper, but as an enabler. By providing standardized architectural patterns, trusted tool registries, and pre-validated security wrappers, ASG allows product teams to ship autonomous capabilities at high velocity without reinventing the wheel. It serves as the bridge between traditional deterministic I.T. operations and the probabilistic nature of modern AI.
+                            </p>
+                            <div class="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+                                <h5 class="text-xs font-bold text-blue-800 uppercase tracking-widest mb-2">Primary Mandate</h5>
+                                <p class="text-sm text-blue-900 font-medium">To transition the organization from "users using software" to "software acting as users," while maintaining absolute control over risk, cost, and compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Cybersecurity -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-red-100 flex items-center justify-center text-red-600">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Cybersecurity</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Access controls & monitoring</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                AI agents introduce a new attack surface. Unlike humans, agents operate continuously and autonomously. Cybersecurity must evolve to govern machine-to-machine trust relationships where a compromised agent could cause cascading failures.
+                            </p>
+                            
+                            <!-- Matrix -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Agent behavioral baselines</li>
+                                            <li>• Authentication requirements</li>
+                                            <li>• Anomaly detection thresholds</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Cybersecurity Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Identity provisioning & IAM</li>
+                                            <li>• Threat detection enforcement</li>
+                                            <li>• Kill-switch execution & containment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Cloud & Infra -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fa-solid fa-cloud text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Cloud & Infrastructure Ops</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Compute & scaling</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Agents require GPU-accelerated compute and create bursty, unpredictable workloads. Infrastructure teams must rethink capacity planning and observability to support these persistent, stateful services.
+                            </p>
+                            
+                            <!-- Matrix -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Inference workload projections</li>
+                                            <li>• Latency requirement definitions</li>
+                                            <li>• State management needs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Cloud Ops Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• GPU/TPU provisioning</li>
+                                            <li>• Auto-scaling execution</li>
+                                            <li>• Cost attribution & chargeback</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. API & Dev -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-orange-100 flex items-center justify-center text-orange-600">
+                                <i class="fa-solid fa-gears text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">API, Dev & Integration</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Tooling & SDKs</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Development teams must build APIs that are legible to AI systems—well-documented and predictably structured. Integration shifts from static mappings to flexible tool registries for dynamic discovery.
+                            </p>
+                            
+                            <!-- Matrix -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Semantic schema standards</li>
+                                            <li>• Tool description formats (MCP)</li>
+                                            <li>• Error recovery protocols</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Dev Teams Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• API implementation & logic</li>
+                                            <li>• Gateway security & rate limiting</li>
+                                            <li>• Version control & deprecation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 5. Data Engineering -->
+                 <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-purple-100 flex items-center justify-center text-purple-600">
+                                <i class="fa-solid fa-chart-network text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Data Engineering</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Pipelines & Analytics</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Agents need curated, real-time access to enterprise knowledge. Data Engineering manages the retrieval systems and the massive volume of interaction logs required for debugging and compliance.
+                            </p>
+                            
+                            <!-- Matrix -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Context window requirements</li>
+                                            <li>• Retrieval quality standards</li>
+                                            <li>• Data freshness SLAs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Data Eng Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Vector DB maintenance</li>
+                                            <li>• Pipeline integrity & ETL</li>
+                                            <li>• Log retention & archiving</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Platform Engineering -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-teal-100 flex items-center justify-center text-teal-600">
+                                <i class="fa-solid fa-plug text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Platform Engineering</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Runtime & Orchestration</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                This team builds the internal developer platform for deploying and managing agents. They abstract infrastructure complexity while enforcing organizational standards and guardrails.
+                            </p>
+                            
+                             <!-- Matrix -->
+                             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Framework selection (e.g., LangChain)</li>
+                                            <li>• Agent template design</li>
+                                            <li>• Testing methodology</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Platform Eng Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Runtime stability & uptime</li>
+                                            <li>• CI/CD pipelines for agents</li>
+                                            <li>• Resource quotas & limits</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Governance -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                <i class="fa-solid fa-clipboard-check text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">IT Governance & Compliance</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Policy & Audit</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Organizations must be able to explain agent decisions, demonstrate authorization, and prove controls. Governance frameworks must extend to cover AI-specific risks and regulatory compliance.
+                            </p>
+                            
+                             <!-- Matrix -->
+                             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Explainability metrics</li>
+                                            <li>• Ethical boundary definitions</li>
+                                            <li>• Human-in-the-loop triggers</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Governance Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Audit execution & reporting</li>
+                                            <li>• Regulatory filing (EU AI Act)</li>
+                                            <li>• Policy ratification</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Business Architecture -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fa-solid fa-arrow-trend-up text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Business Architecture</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Value streams & Modeling</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Agents enable new ways of delivering value. Business Architecture identifies where agents can eliminate wait states and enable capabilities previously limited by human bandwidth.
+                            </p>
+                            
+                             <!-- Matrix -->
+                             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Automation feasibility analysis</li>
+                                            <li>• Capability mapping updates</li>
+                                            <li>• Agent persona definitions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">Biz Arch Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Value stream optimization</li>
+                                            <li>• ROI calculation & realization</li>
+                                            <li>• Process re-engineering</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Enterprise Architecture -->
+                <div class="accordion-item bg-white border border-gray-200 rounded shadow-sm overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleAccordion(this)">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-pink-100 flex items-center justify-center text-pink-600">
+                                <i class="fa-solid fa-city text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Enterprise Architecture</h4>
+                                <p class="text-xs text-slate-500 uppercase font-semibold">Integration & Roadmap</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 pt-0 border-t border-gray-100">
+                        <div class="pt-6 text-slate-700 leading-relaxed">
+                            <p class="mb-6">
+                                Reference models and standards must evolve to include AI agents. EA ensures initiatives don't create silos or technical debt while maintaining agility to adopt emerging patterns.
+                            </p>
+                            
+                             <!-- Matrix -->
+                             <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+                                <div class="bg-slate-50 px-4 py-2 border-b border-slate-200">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Operational Matrix</h5>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                                    <div class="p-4">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">ASG Influences</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Emerging agent patterns</li>
+                                            <li>• Tool selection criteria</li>
+                                            <li>• Interoperability standards</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-slate-50/50">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+                                            <span class="text-xs font-bold text-slate-900 uppercase">EA Responsible</span>
+                                        </div>
+                                        <ul class="text-sm text-slate-600 space-y-1">
+                                            <li>• Technology roadmap management</li>
+                                            <li>• Integration standard enforcement</li>
+                                            <li>• Technical debt mitigation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            <div class="flex items-center gap-2 mb-4 text-slate-400">
+                <i class="fa-solid fa-layer-group"></i>
+                <span class="font-bold tracking-widest text-sm uppercase">Agentic Service Group</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4 text-center">
+                &copy; 2026 Legendary AI. All rights reserved. <br>
+                Empowering the autonomous enterprise.
+            </p>
+            <a href="https://legendary.ai" class="text-blue-400 hover:text-white transition-colors text-sm font-semibold border-b border-transparent hover:border-blue-400 pb-0.5">
+                Visit Legendary.ai
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        function toggleAccordion(button) {
+            const currentItem = button.parentElement;
+            const allItems = document.querySelectorAll('.accordion-item');
+            const isActive = currentItem.classList.contains('active');
+
+            // Close all items
+            allItems.forEach(item => {
+                item.classList.remove('active');
+                item.classList.remove('border-brand-accent');
+                item.classList.add('border-gray-200');
+            });
+
+            // If it wasn't active before, open it now
+            if (!isActive) {
+                currentItem.classList.add('active');
+                currentItem.classList.remove('border-gray-200');
+                currentItem.classList.add('border-brand-accent');
+            }
+        }
+    </script>
+</body>
+</html>
